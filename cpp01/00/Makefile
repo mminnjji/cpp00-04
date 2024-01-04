@@ -1,8 +1,11 @@
-NAME = megaphone
+NAME = zombie
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = megaphone.cpp
+SRC = main.cpp \
+		newZombie.cpp \
+		randomChump.cpp \
+		Zombie.cpp \
 
 RM = rm -f
 .PHONY = all clean re
