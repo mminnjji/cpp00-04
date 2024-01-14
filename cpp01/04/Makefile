@@ -1,10 +1,8 @@
-NAME = zombieHorde
+NAME = replace
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
-SRC = main.cpp \
-		ZombieHorde.cpp \
-		Zombie.cpp \
+SRC = main.cpp
 
 RM = rm -f
 .PHONY = all clean re
