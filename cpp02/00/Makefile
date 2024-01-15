@@ -1,8 +1,8 @@
-NAME = replace
+NAME = fixed
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = main.cpp
+SRC = main.cpp Fixed.cpp
 
 RM = rm -f
 .PHONY = all clean re
