@@ -7,7 +7,7 @@ int main(int ac, char **av)
 
 	if (ac < 2)
 	{
-		std::cout << "LOUD AND UNBEARABLE FEEDBACK NOISE" << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
 	}
 	else
