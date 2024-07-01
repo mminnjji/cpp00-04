@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cctype>
+#include <string>
 
 int main(int ac, char **av)
 {
@@ -15,13 +16,12 @@ int main(int ac, char **av)
 		while (av[i])
 		{
 			int j = 0;
-			while (av[i][j])
+			std::string str = av[i];
+			while (str[j])
 			{
-				av[i][j] = toupper(*(av[i] + j));
-				std::cout << av[i][j];
+				std::cout << static_cast<char>(toupper(str[j]));
 				j++;
 			}
-			std::cout << " ";
 			i++;
 		}
 		std::cout << std::endl;
