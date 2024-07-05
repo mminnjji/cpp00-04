@@ -22,23 +22,14 @@ int main()
             std::cout << "=> Empty input or only spaces! please try again";
             continue;
         }
-
         if (cmd == "ADD")
-        {
             book.add();
-        }
         else if (cmd == "SEARCH")
-        {
             book.search();
-        }
         else if (cmd == "EXIT")
-        {
             return 0;
-        }
         else
-        {
             std::cout << "=> Wrong command! please try again";
-        }
         std::cin.clear();
     }
 }

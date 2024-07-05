@@ -1,9 +1,44 @@
 #include <iostream>
 #include <string>
-#include <cstdlib>
+#include <limits>
 #include <iomanip>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+
+
+int string_to_int(const std::string& str) {
+    if (str.empty()) {
+        throw std::invalid_argument("Input string is empty");
+    }
+    bool is_negative = false;
+    std::string::const_iterator it = str.begin();
+    if (*it == '-') {
+        is_negative = true;
+        ++it;
+    } else if (*it == '+') {
+        ++it;
+    }
+    if (it == str.end()) {
+        throw std::invalid_argument("Input string is not a valid number");
+    }
+    long result = 0;
+    for (; it != str.end(); ++it) {
+        if (!std::isdigit(*it)) {
+            throw std::invalid_argument("Input string contains non-numeric characters");
+        }
+        result = result * 10 + (*it - '0');
+        if (is_negative) {
+            if (-1 * result < std::numeric_limits<int>::min()) {
+                throw std::out_of_range("Underflow: The number is too small for an int");
+            }
+        } else {
+            if (result > std::numeric_limits<int>::max()) {
+                throw std::out_of_range("Overflow: The number is too large for an int");
+            }
+        }
+    }
+    return is_negative ? -result : result;
+}
 
 std::string make_ten(std::string str)
 {
@@ -152,8 +187,16 @@ void PhoneBook::search(void)
         {
             std::cout << "=> Empty input or only spaces! please try again\n";
             continue;
+		}
+        try {
+            idx_search = string_to_int(input) - 1;
+        } catch (const std::invalid_argument& e) {
+            std::cout << "=> Invalid input: " << e.what() << " Please try again\n";
+            continue;
+        } catch (const std::out_of_range& e) {
+            std::cout << "=> Out of range: " << e.what() << " Please try again\n";
+            continue;
         }
-        idx_search = atoi(input.c_str()) - 1;
         if (idx_search < 0 || idx_search > 7 || idx_search >= max)
         {
             std::cout << "=> not invalid index from list -> put number in list\n";
@@ -168,11 +211,7 @@ void PhoneBook::search(void)
     }
 }
 
-PhoneBook::PhoneBook()
-{
-    idx = 0;
-    max = 0;
-}
+PhoneBook::PhoneBook() : idx(0), max(0) {}
 
 PhoneBook::~PhoneBook()
 {
