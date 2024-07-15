@@ -1,10 +1,13 @@
 #include "ClapTrap.hpp"
 
 int main(){
-    ClapTrap clappy("clappy");
-    clappy.attack("Trappy");
-    clappy.takeDamage(3);
-    clappy.beRepaired(3);
-	clappy.takeDamage(10);
-	clappy.beRepaired(10);
+    ClapTrap clap1("clappy");
+
+    clap1.attack("target");
+    clap1.takeDamage(20);
+    clap1.beRepaired(10);
+
+    clap1.takeDamage(90);
+    clap1.attack("target");
+    clap1.beRepaired(20);
 }

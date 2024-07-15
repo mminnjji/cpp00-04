@@ -1,5 +1,7 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(){}
+
 FragTrap::FragTrap(std::string str) : ClapTrap(str) {
     hitPoints = 100;
     energyPoints = 100;
@@ -12,7 +14,6 @@ FragTrap::~FragTrap() {
 }
 
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {
-    *this = other;
     std::cout << "Copied FragTrap " << name << " created" << std::endl;
 }
 
@@ -20,6 +21,7 @@ FragTrap& FragTrap::operator=(const FragTrap& other) {
     if (this != &other) {
         ClapTrap::operator=(other);
     }
+	std::cout << "Copied assigned FragTrap " << name << " created" << std::endl;
     return *this;
 }
 

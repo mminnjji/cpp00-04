@@ -1,5 +1,7 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(){}
+
 ScavTrap::ScavTrap(std::string str) : ClapTrap(str) {
     hitPoints = 100;
     energyPoints = 50;
@@ -12,7 +14,6 @@ ScavTrap::~ScavTrap() {
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
-    *this = other;
     std::cout << "Copied ScavTrap " << name << " created" << std::endl;
 }
 
@@ -20,6 +21,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
     if (this != &other) {
         ClapTrap::operator=(other);
     }
+	std::cout << "Copied-assigned ScavTrap " << name << " created" << std::endl;
     return *this;
 }
 

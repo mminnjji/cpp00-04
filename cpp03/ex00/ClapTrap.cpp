@@ -1,8 +1,11 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{}
+
 ClapTrap::ClapTrap(std::string str) : name(str), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "ClapTrap  " << name << " created with hitPoints:10 energyPoints:10 attackDamage:0" << std::endl;
+	std::cout << "ClapTrap " << name << " created with hitPoints:10 energyPoints:10 attackDamage:0" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -34,7 +37,7 @@ void ClapTrap::attack(const std::string& target)
 		return ;
 	}
 	energyPoints--;
-	std::cout << "ClapTrap " << name << " attacks " << target << " causing " << attackDamage << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -46,9 +49,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 	}
 	for (int i = 0; i < (int)amount; i++)
 	{
-		if (hitPoints <= 0)
+		if (hitPoints < 0)
 		{
-			std::cout << "ClapTrap " << name << " has no HP to take " << amount << " point of damage" << std::endl;
+			std::cout << "ClapTrap " << name << " has no HP to take " << amount << " point of damage : "<< i << " damage" << std::endl;
 			return ;
 		}
 		hitPoints--;

@@ -2,19 +2,16 @@
 #include "ScavTrap.hpp"
 
 int main(){
-    ClapTrap clappy("clappy");
-    clappy.attack("Trappy");
-    clappy.takeDamage(3);
-    clappy.beRepaired(3);
-	clappy.takeDamage(10);
-	clappy.beRepaired(10);
+    ScavTrap scav("scappy");
 
-	ScavTrap scav("Scavvy");
-
-    scav.attack("target1");
-    scav.takeDamage(50);
-    scav.beRepaired(30);
+    scav.attack("target");
+    scav.takeDamage(15);
+    scav.beRepaired(5);
     scav.guardGate();
+
+    scav.takeDamage(90); 
+    scav.attack("target"); 
+    scav.beRepaired(20); 
 
     return 0;
 }
