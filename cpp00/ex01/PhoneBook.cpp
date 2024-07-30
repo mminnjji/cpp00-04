@@ -37,6 +37,7 @@ int string_to_int(const std::string& str) {
             }
         }
     }
+
     return is_negative ? -result : result;
 }
 

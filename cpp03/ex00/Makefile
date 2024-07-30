@@ -1,8 +1,8 @@
-NAME = bsp
+NAME = claptrap
 
 CPP = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRC = main.cpp ClapTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

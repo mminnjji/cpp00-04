@@ -7,7 +7,7 @@ int main( void ) {
   Fixed b( a ); //  객체 a 를 b로 복사 - 복사 생성자
   Fixed c;
 
-  c = b;
+  c = b; // 복사할당연산자
 
   std::cout << a.getRawBits() << std::endl;
   std::cout << b.getRawBits() << std::endl;
