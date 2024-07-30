@@ -23,10 +23,10 @@ Cat& Cat::operator=(const Cat& other)
 {
 	if (this != &other) {
         AAnimal::operator=(other);
+		if (this->brain)
+			delete (this->brain);
+		this->brain = new Brain(*(other.getBrain()));
     }
-	if (this->brain)
-		delete (this->brain);
-	this->brain = new Brain(*(other.getBrain()));
 	std::cout << "Copied assigned Cat " << type << " created" << std::endl;
     return *this;
 }

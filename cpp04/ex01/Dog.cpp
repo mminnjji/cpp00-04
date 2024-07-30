@@ -22,11 +22,11 @@ Dog::Dog(const Dog& other) : Animal(other)
 Dog& Dog::operator=(const Dog& other)
 {
 	if (this != &other) {
-        Animal::operator=(other);
+        AAnimal::operator=(other);
+		if (this->brain)
+			delete (this->brain);
+		this->brain = new Brain(*(other.getBrain()));
     }
-	if (this->brain)
-		delete (this->brain);
-	this->brain = new Brain(*(other.getBrain()));
 	std::cout << "Copied assigned Dog " << type << " created" << std::endl;
     return *this;
 }
