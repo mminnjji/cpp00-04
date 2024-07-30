@@ -1,8 +1,8 @@
-NAME = ex01
+NAME = ex02
 
 CPP = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRC = main.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

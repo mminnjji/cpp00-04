@@ -13,7 +13,7 @@ Dog::~Dog()
 	std::cout << "Dog " << type << " destroyed" << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(other)
+Dog::Dog(const Dog& other) : AAnimal(other)
 {
 	this->brain = new Brain(*(other.getBrain()));
 	std::cout << "Copied Dog " << type << " created" << std::endl;
@@ -22,7 +22,7 @@ Dog::Dog(const Dog& other) : Animal(other)
 Dog& Dog::operator=(const Dog& other)
 {
 	if (this != &other) {
-        Animal::operator=(other);
+        AAnimal::operator=(other);
     }
 	if (this->brain)
 		delete (this->brain);

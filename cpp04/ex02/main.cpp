@@ -1,21 +1,21 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
 int main()
 {
     const int ARRAY_SIZE = 4;
-    Animal* animals[ARRAY_SIZE];
+    AAnimal* AAnimals[ARRAY_SIZE];
 
     // Fill half with Dogs and the other half with Cats
     for (int i = 0; i < ARRAY_SIZE / 2; ++i)
     {
-        animals[i] = new Dog();
+        AAnimals[i] = new Dog();
     }
 
     for (int i = ARRAY_SIZE / 2; i < ARRAY_SIZE; ++i)
     {
-        animals[i] = new Cat();
+        AAnimals[i] = new Cat();
     }
 
     //deepcopy test
@@ -45,10 +45,10 @@ int main()
 
 
 
-    // Loop over the array and delete every Animal
+    // Loop over the array and delete every AAnimal
     for (int i = 0; i < ARRAY_SIZE; ++i)
     {
-        delete animals[i];
+        delete AAnimals[i];
     }
     return 0;
 }
