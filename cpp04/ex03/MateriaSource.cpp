@@ -65,7 +65,9 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	int i = 0;
 
 	while ((this->inventory)[i] && ((this->inventory)[i])->getType() != type && i < 4)
+	{
 		i++;
+	}
 	if (i >= 4 || !(this->inventory)[i])
 	{
 		std::cout << type << " materia does not exit\n";

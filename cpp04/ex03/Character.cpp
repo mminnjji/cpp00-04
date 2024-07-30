@@ -6,7 +6,7 @@ Character::Character()
 
 Character::Character(std::string name) : name(name)
 {
-	std::cout << "A character " << name << " created\n";
+	std::cout << "Character " << name << " created\n";
 	for(int i = 0; i < 4; i++)
 	{
 		this->inventory[i] = 0;
@@ -20,7 +20,7 @@ Character::~Character()
 		if (this->inventory[i])
 			delete this->inventory[i];
 	}
-	std::cout << "Character named " << this->name << " was destroyed\n";
+	std::cout << "Character " << this->name << " destroyed\n";
 }
 
 std::string const & Character::getName() const
@@ -35,7 +35,7 @@ Character::Character(Character &other) : name(other.getName() + "copy")
 		if ((other.inventory)[i])
 			(this->inventory)[i] = (other.inventory[i])->clone();
 	}
-	std::cout << "A character " << name << " created from copy of " << other.name << "\n";
+	std::cout << "Character " << name << " created copied " << other.name << "\n";
 }
 
 Character & Character::operator=(Character const & other)
@@ -100,7 +100,7 @@ void Character::use(int idx, ICharacter& target)
 		std::cout << this->name << " can't use : no Materia in slot\n";
 		return ;
 	}
-	std::cout << this->getName();
+	std::cout << this->getName() << " ";
 	((this->inventory)[idx])->use(target);
 }
 

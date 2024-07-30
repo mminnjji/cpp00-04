@@ -2,7 +2,7 @@
 #include "ICharacter.hpp"
 #include "IMateriaSource.hpp"
 
-Ice::Ice() : type("Ice")
+Ice::Ice() : type("ice")
 {
 	std::cout << this->type << " constructed\n";
 }
@@ -37,6 +37,5 @@ Ice *Ice::clone() const
 void Ice::use(ICharacter& target)
 {
 	std::string targetname = target.getName();
-
 	std::cout << "* shoots an ice bolt at " << targetname << " *" << std::endl;
 }
