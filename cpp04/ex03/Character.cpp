@@ -67,7 +67,7 @@ void Character::equip(AMateria* m)
 		i++;
 	if (i >= 4)
 	{
-		std::cout << this->name << " can't equip more than 4 Materia";
+		std::cout << this->name << " can't equip more than 4 Materia\n";
 		return ;
 	}
 	(this->inventory)[i] = m;

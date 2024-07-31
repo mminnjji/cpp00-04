@@ -15,18 +15,15 @@ AMateria::~AMateria()
 	std::cout << "AMateria destroyed\n";
 }
 
-AMateria::AMateria(AMateria& other) : type(other.type)
+AMateria::AMateria(AMateria& other) : type(other.getType())
 {
 	std::cout << "AMateria copied\n";
 }
 
 AMateria& AMateria::operator=(AMateria const &other)
 {
-	if (this != &other) {
-		// if (!this->type)
-		// 	delete this->type;
-        // this->type = other.getType();
-    }
+	const std::string rtype = other.getType();
+	std::cout << "Assigned from " << rtype << std::endl;
     return *this;
 }
 
@@ -37,5 +34,6 @@ const std::string & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "AMateria used on " << target.getName() << std::endl;
+	std::string rname = target.getName();
+	std::cout << "AMateria used on " << rname << std::endl;
 }

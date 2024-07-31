@@ -4,7 +4,7 @@
 
 Ice::Ice() : type("ice")
 {
-	std::cout << this->type << " constructed\n";
+	std::cout << this->type << " created\n";
 }
 
 Ice::~Ice()
@@ -19,7 +19,8 @@ Ice::Ice(Ice const & other) : type(other.getType())
 
 Ice & Ice::operator=(Ice const & other)
 {
-	std::cout << "Assigned from " << other.getType() << std::endl;
+	const std::string rtype = other.getType();
+	std::cout << "Assigned from " << rtype << std::endl;
 	return (*this);
 }
 

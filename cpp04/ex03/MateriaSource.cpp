@@ -53,7 +53,7 @@ void MateriaSource::learnMateria(AMateria *m)
 		i++;
 	if (i >= 4)
 	{
-		std::cout << "Can't learn more than 4 Materia";
+		std::cout << "Can't learn more than 4 Materia\n";
 		return ;
 	}
 	(this->inventory)[i] = m;

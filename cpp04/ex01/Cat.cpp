@@ -22,7 +22,7 @@ Cat::Cat(const Cat& other) : Animal(other)
 Cat& Cat::operator=(const Cat& other)
 {
 	if (this != &other) {
-        AAnimal::operator=(other);
+        Animal::operator=(other);
 		if (this->brain)
 			delete (this->brain);
 		this->brain = new Brain(*(other.getBrain()));

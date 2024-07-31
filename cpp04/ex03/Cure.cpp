@@ -4,7 +4,7 @@
 
 Cure::Cure() : type("cure")
 {
-	std::cout << this->type << " constructed\n";
+	std::cout << this->type << " created\n";
 }
 
 Cure::~Cure()
@@ -19,7 +19,8 @@ Cure::Cure(Cure const & other) : type(other.getType())
 
 Cure & Cure::operator=(Cure const & other)
 {
-	std::cout << "Assigned from " << other.getType() << std::endl;
+	const std::string rtype = other.getType();
+	std::cout << "Assigned from " << rtype << std::endl;
 	return (*this);
 }
 

@@ -22,7 +22,7 @@ Dog::Dog(const Dog& other) : Animal(other)
 Dog& Dog::operator=(const Dog& other)
 {
 	if (this != &other) {
-        AAnimal::operator=(other);
+        Animal::operator=(other);
 		if (this->brain)
 			delete (this->brain);
 		this->brain = new Brain(*(other.getBrain()));
